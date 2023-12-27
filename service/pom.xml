@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.ineng</groupId>
+    <artifactId>in-eng</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>service</artifactId>
+
+  <name>service</name>
+
+  <properties>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    <!-- in-eng -->
+    <dependency>
+      <groupId>com.ineng</groupId>
+      <artifactId>service-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.ineng</groupId>
+      <artifactId>rest</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.ineng</groupId>
+      <artifactId>repository-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.ineng</groupId>
+      <artifactId>repository</artifactId>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
