@@ -11,6 +11,3 @@
 * type
 * description
 * example
-
-   
-

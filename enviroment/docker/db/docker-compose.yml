@@ -1,4 +1,5 @@
 version: "3.9"
+name: db
 services:
   postgres:
     container_name: postgres_container
@@ -34,12 +35,12 @@ services:
       - "-c"
       - "pg_stat_statements.track=all"
     environment:
-      POSTGRES_DB: "team_quest"
+      POSTGRES_DB: "in-eng"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
-      - teamquestdb-data:/var/lib/postgresql/data
+      - inengdb-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
@@ -81,9 +82,9 @@ services:
     container_name: exporter_container
     image: prometheuscommunity/postgres-exporter:v0.10.1
     environment:
-      DATA_SOURCE_URI: "postgres:5432/habrdb?sslmode=disable"
-      DATA_SOURCE_USER: "habrpguser"
-      DATA_SOURCE_PASS: "pgpwd4habr"
+      DATA_SOURCE_URI: "postgres:5432/in-eng?sslmode=disable"
+      DATA_SOURCE_USER: "postgres"
+      DATA_SOURCE_PASS: "postgres"
       PG_EXPORTER_EXTEND_QUERY_PATH: "/etc/postgres_exporter/queries.yaml"
     volumes:
       - ./queries.yaml:/etc/postgres_exporter/queries.yaml:ro
@@ -99,7 +100,7 @@ services:
       - postgres
 
 volumes:
-  teamquestdb-data:
+  inengdb-data:
 #  pgadmin-data:
 
 networks:
